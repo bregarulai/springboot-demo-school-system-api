@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 import com.bregacode.api.model.Curriculum;
 
 @Repository
-interface CurriculumRepository extends JpaRepository<Curriculum, Long> {
+public interface CurriculumRepository extends JpaRepository<Curriculum, Long> {
 
 }
