@@ -1,5 +1,6 @@
 package com.bregacode.api.model;
 
+import javax.persistence.CascadeType;
 import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
@@ -12,12 +13,12 @@ public class CourseCode {
 	@EmbeddedId
 	private CurriculumCourseKey id;
 	
-	@ManyToOne
+	@ManyToOne(cascade = CascadeType.ALL)
 	@MapsId("course_id")
 	@JoinColumn(name = "course_id")
 	private Course course;
 	
-	@ManyToOne
+	@ManyToOne(cascade = CascadeType.ALL)
 	@MapsId("curriculum_id")
 	@JoinColumn(name = "curriculum_id")
 	private Curriculum curriculum;
