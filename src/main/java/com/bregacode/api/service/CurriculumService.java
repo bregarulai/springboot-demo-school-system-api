@@ -11,11 +11,17 @@ import com.bregacode.api.repository.CurriculumRepository;
 @Service
 public class CurriculumService {
 	
+	
 	@Autowired
 	private CurriculumRepository repo;
 
 	public List<Curriculum> listCurriculum() {
 		return repo.findAll();
+	}
+	
+	public Curriculum findCurriculumByName(String name) {
+		
+		return repo.findByName(name);
 	}
 
 }

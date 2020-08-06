@@ -8,4 +8,6 @@ import com.bregacode.api.model.Curriculum;
 @Repository
 public interface CurriculumRepository extends JpaRepository<Curriculum, Long> {
 
+	Curriculum findByName(String name);
+
 }
