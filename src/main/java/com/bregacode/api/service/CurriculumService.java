@@ -15,6 +15,8 @@ public class CurriculumService {
 	@Autowired
 	private CurriculumRepository repo;
 
+	private Curriculum curriculum;
+
 	public List<Curriculum> listCurriculum() {
 		return repo.findAll();
 	}
@@ -22,6 +24,13 @@ public class CurriculumService {
 	public Curriculum findCurriculumByName(String name) {
 		
 		return repo.findByName(name);
+	}
+
+	public Curriculum addCurriculum(String name) {
+		this.curriculum = new Curriculum();
+		this.curriculum.setName(name);
+		return repo.save(this.curriculum);
+		
 	}
 
 }
